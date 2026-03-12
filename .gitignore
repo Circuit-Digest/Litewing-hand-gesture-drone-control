@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# MediaPipe Model
+gesture_control_system/hand_landmarker.task
+
+# Crazyflie Cache
+gesture_control_system/cache/
+
+# Logs
+gesture_control_system/error_log.txt
+
+# OS
+.DS_Store
+Thumbs.db

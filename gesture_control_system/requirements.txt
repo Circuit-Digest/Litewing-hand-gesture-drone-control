@@ -1,0 +1,6 @@
+# Recommended Python version: 3.11.9
+opencv-python==4.13.0.92
+mediapipe==0.10.32
+matplotlib==3.10.8
+git+https://github.com/Circuit-Digest/crazyflie-lib-python.git
+git+https://github.com/Circuit-Digest/LiteWing-Library.git
