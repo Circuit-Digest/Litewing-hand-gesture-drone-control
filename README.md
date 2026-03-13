@@ -1,10 +1,10 @@
-# LiteWing Gesture Control 🛸
+# LiteWing Gesture Control 
 
-**AI Hand Gesture Control for LiteWing Drones.**
+**Hand Gesture Control for LiteWing Drones.**
 
 This project leverages the LiteWing library to enable real-time hand gesture recognition for drone flight. Using MediaPipe and OpenCV, you can fly the LiteWing drone autonomously without a keyboard or controller.
 
-## 🚀 Key Upgrade: Gesture Control System
+## Key Upgrade: Gesture Control System
 
 The `gesture_control_system` folder contains the heart of this upgrade. It allows for:
 - **Autonomous Takeoff**: Give a **Closed Fist** to arm and take off.
@@ -13,12 +13,12 @@ The `gesture_control_system` folder contains the heart of this upgrade. It allow
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **AI-Powered Recognition**: Uses MediaPipe Hand Landmarker for high-speed, 21-point hand tracking.
+- **Powered Recognition**: Uses MediaPipe Hand Landmarker for high-speed, 21-point hand tracking.
 - **Natural Gestures**:
-    - ✊ **Closed Fist**: Arm and Take off.
-    - ✋ **Open Palm**: Gentle Landing.
+    - **Closed Fist**: Arm and Take off.
+    - **Open Palm**: Gentle Landing.
 - **Precision Tracking**: Proportional movement control based on hand position relative to the camera center.
 - **Safety First**:
     - **Auto-Landing**: Drone automatically lands if hand detection is lost for >0.8 seconds.
@@ -27,7 +27,7 @@ The `gesture_control_system` folder contains the heart of this upgrade. It allow
 - **Rich Visual HUD**: Real-time video overlay showing flight status, battery voltage, height, and directional hints.
 - **Highly Configurable**: Easily tune sensitivity, height, and camera settings via code constants.
 
-## 🧠 How it Works
+## How it Works
 
 The system processes video frames in real-time to identify hand landmarks. It calculates the displacement of your hand's center (MCP of the middle finger) from the camera center to generate movement commands.
 
@@ -37,7 +37,7 @@ The system processes video frames in real-time to identify hand landmarks. It ca
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### 1. Library Installation
 First, install the core LiteWing library from GitHub:
@@ -78,7 +78,7 @@ The `gesture_control_system/gesture_control.py` script manages the mapping betwe
 
 ---
 
-## 🎮 How to Run
+## How to Run
 
 ### Gesture Control
 Run the main gesture control script:
@@ -95,7 +95,7 @@ You can adjust parameters at the top of `gesture_control.py`:
 
 ---
 
-## ✅ Checklist & Works to Run
+## Checklist & Works to Run
 
 Ensure all these items are checked before flight:
 
@@ -107,7 +107,7 @@ Ensure all these items are checked before flight:
 
 ---
 
-## 📖 Project Structure
+## Project Structure
 
 ```
 hand-gesture-drone-control/

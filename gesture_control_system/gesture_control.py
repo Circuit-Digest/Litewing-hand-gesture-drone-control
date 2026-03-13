@@ -6,56 +6,22 @@ import time
 import math
 import urllib.request
 
-# --- Dependency Checks ---
-def check_dependencies():
-    missing = []
-    try:
-        import cv2
-    except ImportError: missing.append("opencv-python")
-    try:
-        import mediapipe
-    except ImportError: missing.append("mediapipe")
-    try:
-        # Check for cflib which is a dependency of litewing
-        import cflib
-    except ImportError: missing.append("cflib (Crazyflie library)")
-    
-    if missing:
-        print("\n" + "!"*60)
-        print(" ERROR: MISSING DEPENDENCIES")
-        print(" " + ", ".join(missing))
-        print("\n TO FIX THIS:")
-        print(" 1. Ensure you have Git installed (https://git-scm.com/)")
-        print(" 2. Run 'start_control.bat'")
-        print("    OR manually run: pip install -r requirements.txt")
-        print("!"*60 + "\n")
-        # Wait for user to read before closing if run via double-click
-        print("Press any key to exit...")
-        msvcrt.getch()
-        sys.exit(1)
 
-# Run dependency check BEFORE importing litewing or mediapipe tasks
-check_dependencies()
-
-# --- Now safe to import internal and external dependencies ---
-try:
-    from litewing import LiteWing
-    import cv2
-    import mediapipe as mp
-    from mediapipe.tasks import python
-    from mediapipe.tasks.python import vision
-except ImportError as e:
-    print(f"Unexpected error during import: {e}")
-    sys.exit(1)
+import cv2
+import mediapipe as mp
+from mediapipe.tasks import python
+from mediapipe.tasks.python import vision
+from litewing import LiteWing
 
 # --- Configuration ---
+
+DRONE_IP = "192.168.43.42" # Default IP
 DEBUG_MODE = 1   # Set to 1 to test without flying, 0 for normal flight
 CAMERA_INDEX = 0 # 0 = Internal, 1 or 2 = External/Virtual Camera
-MODEL_URL = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"
-MODEL_FILENAME = "hand_landmarker.task"
-DRONE_IP = "192.168.43.42" # Default IP
 DEFAULT_SENSITIVITY = 0.3
 DEFAULT_HEIGHT = 0.3 # 30cm hover height
+MODEL_URL = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"
+MODEL_FILENAME = "hand_landmarker.task"
 
 def ensure_model():
     """Ensures the hand_landmarker model is present."""
